@@ -136,11 +136,11 @@ nav .menu {
     transition: 0.5s;
 }
 
-nav .menu ul{
+nav .menu ul {
     display: none;
 }
 
-nav.show .menu ul{
+nav.show .menu ul {
     display: grid;
 }
 
@@ -169,7 +169,7 @@ nav ul li a:hover::after {
     width: 100%;
 }
 
-#header.scroll{
+#header.scroll {
     box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.25);
 }
 
@@ -212,7 +212,7 @@ nav .icon-close {
 nav.show div.icon-close {
     visibility: visible;
     opacity: 1;
-    
+
     top: 1.5rem;
 }
 
@@ -316,4 +316,100 @@ nav.show div.icon-close {
 .card .title {
     font-size: 1.5rem;
     margin-bottom: 0.75rem;
+}
+
+/*Depoimentos*/
+
+#testimonials {
+    background: white;
+}
+
+#testimonials .container {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#testimonials header{
+    margin-bottom: 0;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+#testimonials blockquote {
+    padding: 2rem;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.15);
+    border-radius: 00.25rem;
+}
+#testimonials blockquote p {
+    position: relative;
+    text-indent: 1.87rem;
+    margin-bottom: 1.5rem;
+    color: var(--title-color);
+}
+#testimonials blockquote p span {
+    font: 700 3rem serif;
+    position: absolute;
+    top: -0.875rem;
+    left: -1.87rem;
+    color: var(--base-color);
+}
+#testimonials cite {
+    display: flex;
+    align-items: center;
+    font-style: normal;  
+    color: var(--text-color);  
+}
+
+#testimonials cite img {
+    width: 2rem;
+    height: 2rem;
+    object-fit: cover;
+    clip-path: circle();
+    margin-right: 0.5rem;
+}
+
+
+/*testimonials swiper*/
+.swiper-slide{
+    height: auto;
+    padding: 4rem 1rem;
+}
+
+.swiper-pagination-bullet{
+    width: 0.75rem;
+    height: 0.75rem;
+}
+.swiper-pagination-bullet-active {
+    background: var(--base-color);
+}
+
+
+/*Contato*/
+
+#contact {
+    background: #f1f1f1;
+}
+#contact .grid{
+    gap: 4rem;
+}
+#contact .text p{
+    padding-bottom: 2rem;
+}
+
+#contact ul.grid{
+    gap: 2rem;
+}
+
+#contact .btn i{
+    margin-right: 0.625rem;
+    font-size: 1.5rem;
+}
+
+#contact ul li{
+    display: flex;
+    align-items: center;
+}
+#contact ul li i{
+    margin-right: 0.625rem;
+    color: var(--base-color);
 }

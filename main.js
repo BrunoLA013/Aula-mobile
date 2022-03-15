@@ -31,3 +31,28 @@ window.addEventListener('scroll', function () {
     }
 })
 
+/*swiper*/
+const swiper = new Swiper('.swiper', {
+    slidesPerView: 1,
+    pagination: {
+        el: '.swiper-pagination'
+    },
+    mousewheel: true,
+    keyboard: true,
+});
+
+/* scrollreveal> mostra elementos com scroll na pagina*/
+
+const scrollReveal = ScrollReveal({
+    origin: 'pulse',
+    distance: '30px',
+    duration: 700,
+    reset: true,
+
+})
+
+scrollReveal.reveal('#home .image, #home .text',  { interval: 300 })
+scrollReveal.reveal('#about .image, #about .text',  { interval: 300 })
+scrollReveal.reveal('#services .card, #services .title',  { interval: 300 })
+scrollReveal.reveal('#testimonials, #testimonials ',  { interval: 300 })
+scrollReveal.reveal('#contacti .text, #contact .links ',  { interval: 300 })
