@@ -329,7 +329,7 @@ nav.show div.icon-close {
     margin-right: 0;
 }
 
-#testimonials header{
+#testimonials header {
     margin-bottom: 0;
     margin-left: 1.5rem;
     margin-right: 1.5rem;
@@ -356,8 +356,8 @@ nav.show div.icon-close {
 #testimonials cite {
     display: flex;
     align-items: center;
-    font-style: normal;  
-    color: var(--text-color);  
+    font-style: normal;
+    color: var(--text-color);
 }
 
 #testimonials cite img {
@@ -368,14 +368,13 @@ nav.show div.icon-close {
     margin-right: 0.5rem;
 }
 
-
 /*testimonials swiper*/
-.swiper-slide{
+.swiper-slide {
     height: auto;
     padding: 4rem 1rem;
 }
 
-.swiper-pagination-bullet{
+.swiper-pagination-bullet {
     width: 0.75rem;
     height: 0.75rem;
 }
@@ -383,33 +382,79 @@ nav.show div.icon-close {
     background: var(--base-color);
 }
 
-
 /*Contato*/
 
 #contact {
     background: #f1f1f1;
 }
-#contact .grid{
+#contact .grid {
     gap: 4rem;
 }
-#contact .text p{
+#contact .text p {
     padding-bottom: 2rem;
 }
 
-#contact ul.grid{
+#contact ul.grid {
     gap: 2rem;
 }
 
-#contact .btn i{
+#contact .btn i {
     margin-right: 0.625rem;
     font-size: 1.5rem;
 }
 
-#contact ul li{
+#contact ul li {
     display: flex;
     align-items: center;
 }
-#contact ul li i{
+#contact ul li i {
     margin-right: 0.625rem;
     color: var(--base-color);
 }
+
+/*footer*/
+footer {
+    background: var(--base-color);
+}
+
+footer .logo-alt {
+    font: 700 1.31rem "Poppins", sans-serif;
+    color: var(--title-color);
+    display: inline-block;
+    margin-bottom: 1.5rem;
+}
+
+footer .logo-alt span {
+    color: var(--body-color);
+}
+
+footer .brand p {
+    color: var(--text-color-light);
+    margin-bottom: 0.75rem;
+}
+
+footer i{
+    
+    font-size: 1.5rem;
+    color: var(--text-color-light);
+}
+
+footer .social a{
+    margin-right: 2rem;
+    transition: .3s;
+    display: inline-block;
+}
+
+footer .social a:hover{
+    transform: translateY(-5px);
+}
+
+/*responsive*/
+/* estra large devices: 1200 >*/
+/*large devices: 1023 >*/
+/*Large devices: 992 > */
+
+@media (min-width: 992px) {
+    
+} 
+/*medium devices: 767 >*/
