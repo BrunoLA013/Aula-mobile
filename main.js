@@ -44,7 +44,7 @@ const swiper = new Swiper('.swiper', {
 /* scrollreveal> mostra elementos com scroll na pagina*/
 
 const scrollReveal = ScrollReveal({
-    origin: 'pulse',
+    origin: 'top',
     distance: '30px',
     duration: 700,
     reset: true,
