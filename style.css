@@ -18,6 +18,13 @@
     --text-color: hsl(0 0% 46%);
     --text-color-light: hsl(0 0% 98%);
     --body-color: hsl(0 0% 98%);
+
+    /*font size*/
+    --title-font-size: 1.875rem;
+    --sub-title-size: 1rem;
+
+    --title-font: "Poppins", sans-serif;
+    --body-font: "DM Sans", sans-serif;
 }
 
 /*Base*/
@@ -38,7 +45,7 @@ a {
     text-decoration: none;
 }
 body {
-    font: 400 1rem "DM Sans", sans-serif;
+    font: 400 1rem var(--body-font);
     color: var(--text-color);
     background: var(--body-color);
     -webkit-font-smoothing: antialiased;
@@ -47,7 +54,7 @@ html {
     scroll-behavior: smooth;
 }
 .title {
-    font: 700 1.875rem "Poppins", sans-serif;
+    font: 700 1.875rem var(--title-font);
     color: var(--title-color);
     -webkit-font-smoothing: auto;
 }
@@ -80,7 +87,7 @@ header p strong {
     align-items: center;
     padding: 0 2rem;
     border-radius: 00.25rem;
-    font: 500 1rem "DM sans", sans-serif;
+    font: 500 1rem var(--body-font);
 }
 .btn:hover {
     background: var(--base-color-alt);
@@ -102,7 +109,7 @@ ul {
 /*Header*/
 
 .logo {
-    font: 700 1.31rem "Poppins", sans-serif;
+    font: 700 1.31rem var(--title-font);
     color: var(--title-color);
 }
 
@@ -154,7 +161,8 @@ nav ul li a {
 nav ul li a:hover {
     color: var(--base-color);
 }
-nav ul li a::after {
+nav ul li a::after,
+nav ul li a.active {
     content: "";
     width: 0%;
     height: 2px;
@@ -165,8 +173,10 @@ nav ul li a::after {
     bottom: -1.5rem;
     transition: width 0.5s;
 }
-nav ul li a:hover::after {
+nav ul li a:hover::after,
+nav ul li a.active:hover {
     width: 100%;
+    font-weight: bold;
 }
 
 #header.scroll {
@@ -417,8 +427,12 @@ footer {
     background: var(--base-color);
 }
 
+footer.p-tb {
+    padding: 4rem 0;
+}
+
 footer .logo-alt {
-    font: 700 1.31rem "Poppins", sans-serif;
+    font: 700 1.31rem var(--title-font);
     color: var(--title-color);
     display: inline-block;
     margin-bottom: 1.5rem;
@@ -433,28 +447,130 @@ footer .brand p {
     margin-bottom: 0.75rem;
 }
 
-footer i{
-    
+footer i {
     font-size: 1.5rem;
     color: var(--text-color-light);
 }
 
-footer .social a{
+footer .social a {
     margin-right: 2rem;
-    transition: .3s;
+    transition: 0.3s;
     display: inline-block;
 }
 
-footer .social a:hover{
+footer .social a:hover {
     transform: translateY(-5px);
 }
 
 /*responsive*/
 /* estra large devices: 1200 >*/
+@media (min-width: 1200px) {
+    .container {
+        max-width: 70rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .p-tb {
+        padding: 10rem 0;
+    }
+    .p-tb header,
+    #testimonials header {
+        max-width: 32rem;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    nav .menu {
+        opacity: 1;
+        visibility: visible;
+        top: 0;
+    }
+    nav .menu ul {
+        display: flex;
+        gap: 2rem;
+    }
+
+    nav .menu ul li a.title {
+        font: 400 1rem var(--body-font);
+    }
+
+    nav .icon-menu {
+        display: none;
+    }
+    .btn {
+        height: 3.125rem;
+    }
+
+    /*home*/
+    #home .container {
+        grid-auto-flow: column;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+    }
+    #home .image {
+        order: 1;
+        width: 40rem;
+        height: 100%;
+    }
+    #home .text {
+        order: 0;
+        max-width: 24rem;
+        text-align: left;
+    }
+
+    /*about*/
+
+    #about .container {
+        grid-auto-flow: column;
+        margin: 0 auto;
+    }
+
+    /*services*/
+    .cards {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .card {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+}
+/*testimonials*/
+
+#testimonials .container {
+    margin-left: auto;
+    margin-right: auto;
+}
+/*services*/
+
+/*contact*/
+#contact .container {
+    grid-auto-flow: column;
+    align-items: center;
+}
+#contact .text {
+    max-width: 25rem;
+}
+
+/*Footer*/
+footer .p-tb{
+    padding: 3.75rem 0;
+}
+
+footer .container{
+    
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
 /*large devices: 1023 >*/
+@media (min-width: 1023px) {
+}
 /*Large devices: 992 > */
 
 @media (min-width: 992px) {
-    
-} 
+}
+
 /*medium devices: 767 >*/

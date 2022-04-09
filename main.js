@@ -31,6 +31,7 @@ window.addEventListener('scroll', function () {
     }
 })
 
+
 /*swiper*/
 const swiper = new Swiper('.swiper', {
     slidesPerView: 1,
@@ -39,9 +40,15 @@ const swiper = new Swiper('.swiper', {
     },
     mousewheel: true,
     keyboard: true,
+    breakpoints: {
+        767: {
+            slidesPerView: 2,
+            setWrapperSize: true,
+        }
+    }
 });
 
-/* scrollreveal> mostra elementos com scroll na pagina*/
+/* scrollreveal: mostra elementos com scroll na pagina*/
 
 const scrollReveal = ScrollReveal({
     origin: 'top',
@@ -51,9 +58,44 @@ const scrollReveal = ScrollReveal({
 
 })
 
-scrollReveal.reveal('#home .image, #home .text',  { interval: 300 })
-scrollReveal.reveal('#about .image, #about .text',  { interval: 300 })
-scrollReveal.reveal('#services .card, #services .title',  { interval: 300 })
-scrollReveal.reveal('#testimonials, #testimonials ',  { interval: 300 })
-scrollReveal.reveal('#contact .text, #contact .links ',  { interval: 300 })
-scrollReveal.reveal('.brand .logo-alt, .parg ,  .social',  { interval: 300 })
+scrollReveal.reveal(
+    `#home .image, #home .text,
+    #about .image, #about .text,
+    #services header, #services .card,
+    #testimonials header, #testimonials .testimonials
+    #contact .text, #contact .links,
+    footer .brand, footer .social
+    `,
+    { interval: 100 }
+)
+
+/* Menu ativo conforme a seção visível na página */
+const sections = document.querySelectorAll('main section[id]')
+function activateMenuAtCurrentSection() {
+    const checkpoint = window.pageYOffset + (window.innerHeight / 8) * 4
+
+    for (const section of sections) {
+        const sectionTop = section.offsetTop
+        const sectionHeight = section.offsetHeight
+        const sectionId = section.getAttribute('id')
+
+        const checkpointStart = checkpoint >= sectionTop
+        const checkpointEnd = checkpoint <= sectionTop + sectionHeight
+
+        if (checkpointStart && checkpointEnd) {
+            document
+                .querySelector('nav ul li a[href*=' + sectionId + ']')
+                .classList.add('active')
+        } else {
+            document
+                .querySelector('nav ul li a[href*=' + sectionId + ']')
+                .classList.remove('active')
+        }
+    }
+}
+/* When Scroll */
+window.addEventListener('scroll', function () {
+    changeHeaderWhenScroll()
+    backToTop()
+    activateMenuAtCurrentSection()
+})
